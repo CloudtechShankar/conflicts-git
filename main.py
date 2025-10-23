@@ -10,7 +10,7 @@ def list_s3_buckets():
     """
     s3 = boto3.client('ec2)
     try:
-        response = s3.list_buckets()
+        response = vpc.list()
         buckets = [bucket['Name'] for bucket in response.get('Buckets', [])]
         return jsonify({'buckets': buckets}), 200
     except (BotoCoreError, ClientError) as e:
