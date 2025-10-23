@@ -8,7 +8,7 @@ def list_s3_buckets():
     """
     List all S3 buckets in the AWS account.
     """
-    s3 = boto3.client('ec2)
+    s3 = boto3.client('vpc')
     try:
         response = vpc.list()
         buckets = [bucket['Name'] for bucket in response.get('Buckets', [])]
